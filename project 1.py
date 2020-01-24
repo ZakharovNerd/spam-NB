@@ -73,16 +73,16 @@ train_labels = np.zeros(x.shape[0])
 train_labels[x_ham.shape[0]:x.shape[0] - 1] = 1
 train_matrix = extract_features(x['message'], dicy)
 
-
+model1 = MultinomialNB()
 model2 = LinearSVC()
-
+model1.fit(train_matrix,train_labels)
 model2.fit(train_matrix,train_labels)
 
 
 test_matrix = extract_features(y['message'], dicy)
 test_labels = np.zeros(y.shape[0])
 test_labels[y_ham.shape[0]:y.shape[0] - 1] = 1
-
+result1 = model1.predict(test_matrix)
 result2 = model2.predict(test_matrix)
 
 
