@@ -8,9 +8,7 @@ from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
 from sklearn.svm import SVC, NuSVC, LinearSVC
 from sklearn.metrics import mean_absolute_error
 import warnings
-with warnings.catch_warnings():
-    warnings.simplefilter('ignore')
-    exported_pipeline.fit(X_train, y_train)
+
 
 
 df=pd.read_csv('SMSSpamCollection.csv',sep='\t')
