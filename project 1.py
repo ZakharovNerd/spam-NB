@@ -7,7 +7,7 @@ from collections import Counter
 from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
 from sklearn.svm import SVC, NuSVC, LinearSVC
 from sklearn.metrics import mean_absolute_error
-import warnings
+
 
 
 
