@@ -6,7 +6,8 @@ from sklearn.model_selection import train_test_split
 from collections import Counter
 from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
 from sklearn.svm import SVC, NuSVC, LinearSVC
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix
 
 
 
@@ -72,29 +73,17 @@ train_labels[x_ham.shape[0]:x.shape[0] - 1] = 1
 train_matrix = extract_features(x['message'], dicy)
 
 model1 = MultinomialNB()
-model2 = LinearSVC()
+
 model1.fit(train_matrix,train_labels)
-model2.fit(train_matrix,train_labels)
+
 
 
 test_matrix = extract_features(y['message'], dicy)
 test_labels = np.zeros(y.shape[0])
 test_labels[y_ham.shape[0]:y.shape[0] - 1] = 1
 result1 = model1.predict(test_matrix)
-result2 = model2.predict(test_matrix)
 
-
-
-
-
-
-
-
-
-
-
-
-
+print(confusion_matrix(test_labels,result1))
 
 
 
