@@ -44,7 +44,6 @@ def extract_features(mail_dir, dictionary):
 #mail_dir - начальный необработанный файл. От него мы берем количество строк
 #dictionary - обработанный словарь с количеством вхождения слов в mail_dir
     features_matrix = np.zeros((mail_dir.shape[0], len(dictionary.keys())))
-# заебался и в параметры засунул числа, а не функции и лишнюю поеботу
     mail_dir_id = 0
     for m in mail_dir:
         words = m.split()
